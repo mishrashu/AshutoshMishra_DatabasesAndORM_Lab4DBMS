@@ -255,7 +255,7 @@ FROM
 7) Find the least expensive product from each category and print the table with category id, name, product name and price of the product
 */
 
-select e.cat_id, e.cat_name, e.pro_name, e.supp_price, e.min_supp_price from 
+select e.cat_id, e.cat_name, e.pro_name, e.supp_price from 
 (select d.cat_id, d.cat_name, d.pro_name, sp.supp_price, row_number() OVER (partition by d.cat_id order by sp.supp_price asc) 
 as min_supp_price from supplier_pricing sp
 inner join
