@@ -234,22 +234,22 @@ FROM
 6) Display the Supplier details who can supply more than one product.
 */
 
-SELECT 
-    a.supp_id, SUPP_NAME, SUPP_CITY, SUPP_PHONE, a.productCount
-FROM
-    supplier s
-        INNER JOIN
-    (SELECT 
-        supp_id, COUNT(pro_id) AS productCount
-    FROM
-        supplier_pricing
-    WHERE
-        pro_id IN (SELECT 
-                pro_id
-            FROM
-                product)
-    GROUP BY supp_id
-    HAVING COUNT(*) > 1) a ON a.SUPP_ID = s.supp_id;
+	SELECT 
+		a.supp_id, SUPP_NAME, SUPP_CITY, SUPP_PHONE
+	FROM
+		supplier s
+			INNER JOIN
+		(SELECT 
+			supp_id, COUNT(pro_id) AS productCount
+		FROM
+			supplier_pricing
+		WHERE
+			pro_id IN (SELECT 
+					pro_id
+				FROM
+					product)
+		GROUP BY supp_id
+		HAVING COUNT(*) > 1) a ON a.SUPP_ID = s.supp_id;
     
 /*
 7) Find the least expensive product from each category and print the table with category id, name, product name and price of the product
