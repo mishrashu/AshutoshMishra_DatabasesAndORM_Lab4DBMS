@@ -13,3 +13,14 @@ d) Sub Queries
 e) Procedures (Creating & Executing )
 f) Use case construct in a procedure.
 ```
+
+**Notes**
+
+A. **Lab4_Session_DBMS.sql** : This file contains all the SQL DDL and DML statements
+
+B. **LAB 4 DBMS Session Query Output.docx**: This file contains the SQL queries output
+
+C. **Problem Statement.pdf**: This is the problem assignment
+
+D. **README.md**: Contains more info about the repository
+
